@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protected Access</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Password Protected Area</h2>
+    <input type="password" id="passwordInput" placeholder="Enter Password" />
+    <button onclick="checkPassword()">Login</button>
+    <p><a href="forgot-password.html">Forgot Password?</a></p>
+    <p id="errorMsg" style="color: red;"></p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "darkzone123"; // তুই যেটা ঠিক করবি
+
+      if (input === correctPassword) {
+        window.location.href = "protected-page.html"; // যেই পেজে ঢুকবি
+      } else {
+        document.getElementById("errorMsg").innerText = "Incorrect password!";
+      }
+    }
+  </script>
+</body>
+</html>
